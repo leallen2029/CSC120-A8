@@ -64,7 +64,13 @@ public class Library extends Building implements LibraryRequirements {
   }
 
 
-
+@Override
+public void showOptions() {
+    super.showOptions();
+    System.out.println(" + addTitle(title)\n + removeTitle(title)\n"
+        + " + checkOut(title)\n + returnBook(title)\n"
+        + " + containsTitle(title)\n + isAvailable(title)\n + printCollection()");
+}
 
 
       public static void main(String[] args) {
