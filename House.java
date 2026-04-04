@@ -10,7 +10,14 @@ public class House extends Building implements HouseRequirements {
         super(name, address, nFloors);
         this.residents = new ArrayList<Student>();
         this.hasDiningRoom = hasDiningRoom;
-    }
+  }
+
+  public House(String name, String address, int nFloors) {
+    this(name, address, nFloors, false);
+}
+  public House(String name, String address) {
+    this(name, address, 1, false);
+  }
 
   public boolean hasDiningRoom() {
     return this.hasDiningRoom;
