@@ -2,12 +2,23 @@
 import java.util.Hashtable;
 
 public class Library extends Building implements LibraryRequirements {
-  private Hashtable<String, Boolean> collection;
+    private Hashtable<String, Boolean> collection;
 
+    // original 
     public Library(String name, String address, int nFloors) {
-      super(name, address, nFloors);
-      collection = new Hashtable<>();
-      System.out.println("You have built a library: 📖");
+        super(name, address, nFloors);
+        collection = new Hashtable<>();
+        System.out.println("You have built a library: 📖");
+    }
+
+    // overload. no floors specified, sets min of 1
+    public Library(String name, String address) {
+        this(name, address, 1);
+    }
+
+    // overload. no address or floors specified
+    public Library(String name) {
+        this(name, "<Address Unknown>", 1);
     }
 
     public void addBook(String title, boolean isAvailable) {
@@ -56,9 +67,7 @@ public class Library extends Building implements LibraryRequirements {
 
 
 
-    public static void main(String[] args) {
-      new Library("Main Library", "123 Main Street", 3);
-    }
-
-
+      public static void main(String[] args) {
+        new Library("Main Library", "123 Main Street", 3);
+      }
   }
