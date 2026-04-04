@@ -13,6 +13,12 @@ public class Cafe extends Building implements CafeRequirements {
         this.nCups = nCups;
         System.out.println("You have built a cafe: ☕");
     }
+    public Cafe(String name, String address, int nFloors) {
+    this(name, address, nFloors, 24, 100, 100, 100);
+}
+    public Cafe(String name, String address) {
+        this(name, address, 1, 24, 100, 100, 100);
+    }
 
 
     private void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups) { 
