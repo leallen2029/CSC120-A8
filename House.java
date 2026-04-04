@@ -39,7 +39,12 @@ public class House extends Building implements HouseRequirements {
   public boolean isResident(Student student) {
     return this.residents.contains(student);
   }
-
+  @Override
+  public void showOptions() {
+    super.showOptions();
+    System.out.println(" + moveIn(Student)\n + moveOut(Student)\n"
+        + " + isResident(Student)\n + hasDiningRoom()\n + nResidents()");
+}
     public static void main(String[] args) {
       new House("Landree's house", "100 Green Street Northampton, MA 01063", 2, true);
       System.out.println("You have built a house: 🏠");
