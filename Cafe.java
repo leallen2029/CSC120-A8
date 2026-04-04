@@ -55,6 +55,13 @@ public class Cafe extends Building implements CafeRequirements {
         super.showOptions();
         System.out.println(" + sellCoffee(size, nSugarPackets, nCreams)");
     }
+    @Override
+    public void goToFloor(int floorNum) {
+        if (floorNum != 1) {
+            throw new RuntimeException("Customers can only access the ground floor of " + this.name + ".");
+        }
+        super.goToFloor(floorNum);
+}
 
     public static void main(String[] args) {
         new Cafe("Starbucks", "456 Oak Avenue", 1, 1000, 500, 300, 200);
