@@ -50,6 +50,11 @@ public class Cafe extends Building implements CafeRequirements {
         this.nCreams -= nCreams;
         this.nCups -= 1;
     }
+    @Override
+    public void showOptions() {
+        super.showOptions();
+        System.out.println(" + sellCoffee(size, nSugarPackets, nCreams)");
+    }
 
     public static void main(String[] args) {
         new Cafe("Starbucks", "456 Oak Avenue", 1, 1000, 500, 300, 200);
