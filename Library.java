@@ -73,7 +73,15 @@ public void showOptions() {
         + " + checkOut(title)\n + returnBook(title)\n"
         + " + containsTitle(title)\n + isAvailable(title)\n + printCollection()");
 }
-
+  @Override
+  public void goToFloor(int floorNum) {
+      if (!this.hasElevator) {
+          if (Math.abs(floorNum - this.activeFloor) > 1) {
+              throw new RuntimeException("This house has no elevator - you can only move one floor at a time.");
+          }
+      }
+      super.goToFloor(floorNum);
+  }
 
       public static void main(String[] args) {
         new Library("Main Library", "123 Main Street", 3, false);
