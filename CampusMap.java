@@ -4,11 +4,13 @@ public class CampusMap {
 
     ArrayList<Building> buildings;
     ArrayList<Cafe> cafes;
+    ArrayList<House> houses;
 
     /* Default constructor, initializes empty ArrayList */
     public CampusMap() {
         buildings = new ArrayList<Building>();
         cafes = new ArrayList<Cafe>();
+        houses = new ArrayList<House>();
     }
 
     /**
