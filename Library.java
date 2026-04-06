@@ -89,7 +89,7 @@ public class Library extends Building implements LibraryRequirements {
   public void goToFloor(int floorNum) {
       if (!this.hasElevator) {
           if (Math.abs(floorNum - this.activeFloor) > 1) {
-              throw new RuntimeException("This house has no elevator - you can only move one floor at a time.");
+              throw new RuntimeException("This Library has no elevator - you can only move one floor at a time.");
           }
       }
       super.goToFloor(floorNum);
