@@ -1,4 +1,5 @@
 /* This is a stub for the Cafe class */
+import java.util.Scanner;
 public class Cafe extends Building implements CafeRequirements {
     private int nCoffeeOunces; // The number of ounces of coffee remaining in inventory
     private int nSugarPackets; // The number of sugar packets remaining in inventory
@@ -15,10 +16,10 @@ public class Cafe extends Building implements CafeRequirements {
     }
     //overload. no inventory specified, sets default inventory to 24 ounces of coffee, 100 sugar packets, 100 creams, and 100 cups
     public Cafe(String name, String address, int nFloors) {
-    this(name, address, nFloors, 24, 100, 100, 100);
+    this(name, address, nFloors, 25, 100, 100, 100);
 }
     public Cafe(String name, String address) {
-        this(name, address, 1, 24, 100, 100, 100);
+        this(name, address, 1, 25, 100, 100, 100);
     }
 
 
@@ -62,6 +63,23 @@ public class Cafe extends Building implements CafeRequirements {
         }
         super.goToFloor(floorNum);
 }
+    @Override
+    public void handleAction(String action, Scanner scan) {
+        if (action.equalsIgnoreCase("coffee")) {
+            System.out.println("What size coffee?");
+            int size = scan.nextInt();
+
+            System.out.println("How many sugar packets do you want?");
+            int sugar = scan.nextInt();
+
+            System.out.println("How many creams do you want?");
+            int creams = scan.nextInt();
+
+            this.sellCoffee(size, sugar, creams);
+        } else {
+            super.handleAction(action, scan);
+        }
+    }
 
     public static void main(String[] args) {
         new Cafe("Starbucks", "456 Oak Avenue", 1, 1000, 500, 300, 200);

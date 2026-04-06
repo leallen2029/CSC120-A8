@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Building {
 
     protected String name;
@@ -92,6 +93,9 @@ public class Building {
     public String toString() {
         return this.name + " is a " + this.nFloors + "-story building located at " + this.address + ".";
     }
+    public void handleAction(String action, Scanner scan) {
+        System.out.println("Invalid action.");
+}
 
     public static void main(String[] args) {
         System.out.println("------------------------------------");

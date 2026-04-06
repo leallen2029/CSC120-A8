@@ -1,5 +1,6 @@
 /* This is a stub for the Library class */
 import java.util.Hashtable;
+import java.util.Scanner;
 
 public class Library extends Building implements LibraryRequirements {
     private Hashtable<String, Boolean> collection;
@@ -65,14 +66,25 @@ public class Library extends Building implements LibraryRequirements {
     }
   }
 
+  @Override
+  public void handleAction(String action, Scanner scan) {
+      if (action.equalsIgnoreCase("checkout")) {
+          System.out.println("What is the title?");
+          scan.nextLine();
+          String title = scan.nextLine();
+          this.checkOut(title);
+      } else {
+          super.handleAction(action, scan);
+      }
+  }
 
-@Override
-public void showOptions() {
-    super.showOptions();
-    System.out.println(" + addTitle(title)\n + removeTitle(title)\n"
-        + " + checkOut(title)\n + returnBook(title)\n"
-        + " + containsTitle(title)\n + isAvailable(title)\n + printCollection()");
-}
+  @Override
+  public void showOptions() {
+      super.showOptions();
+      System.out.println(" + addTitle(title)\n + removeTitle(title)\n"
+          + " + checkOut(title)\n + returnBook(title)\n"
+          + " + containsTitle(title)\n + isAvailable(title)\n + printCollection()");
+  }
   @Override
   public void goToFloor(int floorNum) {
       if (!this.hasElevator) {
