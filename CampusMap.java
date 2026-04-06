@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CampusMap {
 
@@ -72,5 +73,18 @@ public class CampusMap {
         myMap.addBuilding(campusCafe);
 
         System.out.println(myMap);
+        Scanner scan = new Scanner(System.in);
+        while (true){
+        System.out.println("Which building would you like to enter? (Enter a number 1-"+myMap.buildings.size()+", or 0 to exit)");
+        int choice = scan.nextInt();
+        if (choice == 0) {
+            break;
+    } 
+        else {
+        Building selected = myMap.buildings.get(choice - 1);
+        selected.enter();
+    }
+        }
+
     }
     }
