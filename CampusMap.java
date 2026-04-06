@@ -85,6 +85,7 @@ public class CampusMap {
         selected.enter();
     }
         }
+        scan.close();
 
     }
     }
