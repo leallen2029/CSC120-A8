@@ -94,6 +94,10 @@ public class Library extends Building implements LibraryRequirements {
       }
       super.goToFloor(floorNum);
   }
+  @Override
+  public String getExtraOptions() {
+    return ", checkout";
+}
 
       public static void main(String[] args) {
         new Library("Main Library", "123 Main Street", 3, false);

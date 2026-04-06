@@ -85,7 +85,7 @@ public class CampusMap {
                 Building selected = myMap.buildings.get(choice - 1);
                 selected.enter();
                 while (true) {
-                    System.out.println("What would you like to do? (exit, floor, coffee, checkout)");
+                    System.out.println("What would you like to do? (exit, floor" + selected.getExtraOptions() + ")");
 
                     String action = scan.next();
 

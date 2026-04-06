@@ -80,6 +80,10 @@ public class Cafe extends Building implements CafeRequirements {
             super.handleAction(action, scan);
         }
     }
+    @Override
+    public String getExtraOptions() {
+        return ", coffee";
+}
 
     public static void main(String[] args) {
         new Cafe("Starbucks", "456 Oak Avenue", 1, 1000, 500, 300, 200);

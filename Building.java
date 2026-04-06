@@ -96,6 +96,9 @@ public class Building {
     public void handleAction(String action, Scanner scan) {
         System.out.println("Invalid action.");
 }
+    public String getExtraOptions() {
+        return "";
+    }
 
     public static void main(String[] args) {
         System.out.println("------------------------------------");
